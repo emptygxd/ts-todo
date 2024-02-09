@@ -1,0 +1,10 @@
+export const add = document.getElementById("add");
+export const title = document.getElementById("title");
+export const detail = document.getElementById("detail");
+export const deadline = document.getElementById("deadline");
+export const titleError = document.getElementById("titleError");
+export const detailError = document.getElementById("detailError");
+export const deadlineError = document.getElementById("deadlineError");
+export const index = document.getElementById("index__wrapper");
+export const cancel = document.querySelector(".cancel");
+export const update = document.querySelector(".update");

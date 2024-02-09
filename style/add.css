@@ -1,0 +1,97 @@
+header img {
+  margin-left: -60px;
+}
+
+.add__main {
+  height: 90vh;
+  background-color: var(--white);
+}
+
+.add__wrapper {
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: start;
+  gap: 50px;
+}
+
+.add__wrapper > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#titleError,
+#detailError,
+#deadlineError {
+  margin-bottom: -32px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 18px;
+  width: 320px;
+
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #8b8787;
+
+  padding-bottom: 6px;
+}
+
+.priority__container {
+  width: 320px;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.priority__container p {
+  font-size: 20px;
+}
+
+.priority__container input {
+  width: auto;
+}
+
+.priority__container label {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+button {
+  font-family: "Jost";
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white);
+
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+  width: 360px;
+  height: 60px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+button:hover {
+  transition: 0.15s;
+  transform: translateY(-4px);
+  background-color: var(--pressed-button);
+}

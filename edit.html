@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="colors">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/import.css" />
+    <title>EDIT</title>
+  </head>
+  <body>
+    <div class="root">
+      <header>
+        <a href="./index.html">
+          <img src="./assets/back.png" alt="back" />
+        </a>
+        <h1>Edit Task</h1>
+      </header>
+
+      <main class="add__main">
+        <div class="add__wrapper wrapper">
+          <div>
+            <div class="title__container container">
+              <input id="title" placeholder="Title" type="text" />
+              <p id="titleError" class="hidden">
+                Поле обязательно для заполнения
+              </p>
+            </div>
+
+            <div class="detail__container container">
+              <input id="detail" placeholder="Detail" type="text" />
+              <p id="detailError" class="hidden">
+                Поле обязательно для заполнения
+              </p>
+            </div>
+
+            <div class="deadline__container container">
+              <input id="deadline" type="date" />
+              <p id="deadlineError" class="hidden">
+                Дата должна быть больше текущей и не больше, чем текущая + 50
+                лет
+              </p>
+            </div>
+
+            <div class="priority__container container">
+              <p>Выберите уровень приоритета:</p>
+
+              <div>
+                <input
+                  value="a"
+                  id="priorityChoice1"
+                  type="radio"
+                  name="priority"
+                  checked
+                />
+                <label for="priorityChoice1">Высокий</label>
+              </div>
+
+              <div>
+                <input
+                  value="b"
+                  id="priorityChoice2"
+                  type="radio"
+                  name="priority"
+                />
+                <label for="priorityChoice2">Средний</label>
+              </div>
+
+              <div>
+                <input
+                  value="c"
+                  id="priorityChoice3"
+                  type="radio"
+                  name="priority"
+                />
+                <label for="priorityChoice3">Низкий</label>
+              </div>
+            </div>
+          </div>
+          <div id="buttons">
+            <button id="add" class="update">Update</button>
+            <button id="add" class="cancel">Cancel</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="./scripts/importEdit.js" type="module"></script>
+</html>
