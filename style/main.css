@@ -16,6 +16,8 @@ a {
   --selected-color: #8b8787;
   --pressed-button: #7679c4;
   --priority-color: #ffffff;
+  --error-color: rgb(255, 0, 0);
+  --shadow-color: #00000040;
 }
 
 .a {
@@ -151,7 +153,7 @@ main {
   border-radius: 25px;
   background-color: var(--priority-color);
 
-  box-shadow: 0px 6px 4px 0px #00000040;
+  box-shadow: 0px 6px 4px 0px var(--shadow-color);
 }
 
 .todo__title {
@@ -179,7 +181,7 @@ main {
 
   border-radius: 50%;
   background-color: var(--primary-color);
-  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 4px 4px 0px var(--shadow-color);
 
   position: absolute;
   right: 40px;

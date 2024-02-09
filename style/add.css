@@ -33,7 +33,7 @@ header img {
 #detailError,
 #deadlineError {
   margin-bottom: -32px;
-  color: red;
+  color: var(--error-color);
 }
 
 .hidden {
@@ -48,7 +48,7 @@ input {
 
   outline: none;
   border: none;
-  border-bottom: 1px solid #8b8787;
+  border-bottom: 1px solid var(--selected-color);
 
   padding-bottom: 6px;
 }
@@ -82,7 +82,7 @@ button {
 
   border: none;
   border-radius: 15px;
-  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 4px 4px 0px var(--shadow-color);
 
   width: 360px;
   height: 60px;
