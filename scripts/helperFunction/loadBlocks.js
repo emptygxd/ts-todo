@@ -10,6 +10,7 @@ export function createEmptyContainer(message) {
 }
 
 export function createContainer(todoObject, page) {
+  const index = "index";
   const todo__container = document.createElement("div");
 
   const todo__text = document.createElement("div");
@@ -40,7 +41,7 @@ export function createContainer(todoObject, page) {
 
   INDEX_PAGE.appendChild(todo__container);
 
-  if (page === "index") {
+  if (page === index) {
     const todo__imgs = document.createElement("div");
     const pDeadline = document.createElement("p");
     const aEdit = document.createElement("a");
