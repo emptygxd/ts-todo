@@ -1,9 +1,5 @@
-import { add } from "./constants.js";
+import { addToStorage } from "./helperFunction/addToStorage.js";
 
-import createAddToStorageManager from "./helperFunction/addToStorage.js";
+const addButton = document.getElementById("add");
 
-const addToStorageManager = createAddToStorageManager();
-
-window.addToStorage = addToStorageManager.addToStorage;
-
-add.addEventListener("click", addToStorage);
+addButton.addEventListener("click", addToStorage);

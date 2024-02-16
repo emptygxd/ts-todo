@@ -1,15 +1,12 @@
-import { cancel, update } from "./constants.js";
+import { getEditId } from "./helperFunction/getEditId.js";
+import { editStorage } from "./helperFunction/editStorage.js";
 
-import createGetIdManager from "./helperFunction/getEditId.js";
+const canceButton = document.querySelector(".cancel");
+const updateButton = document.querySelector(".update");
 
-const getIdManager = createGetIdManager();
-
-window.getEditId = getIdManager.getEditId;
-
-getEditId();
-
-cancel.addEventListener("click", () => {
+canceButton.addEventListener("click", () => {
   window.location.href = "./index.html";
 });
 
-update.addEventListener("click", editStorage);
+getEditId();
+updateButton.addEventListener("click", editStorage);

@@ -1,17 +1,13 @@
-import createLoadManager from "./helperFunction/loadBlocks.js";
-import createSortManager from "./helperFunction/sort.js";
-
-const loadManager = createLoadManager();
-const sortManager = createSortManager();
-
-window.createContainer = loadManager.createContainer;
-window.createEmptyContainer = loadManager.createEmptyContainer;
-window.sortTodo = sortManager.sortTodo;
+import { MESSAGE } from "./constants.js";
+import {
+  createContainer,
+  createEmptyContainer,
+} from "./helperFunction/loadBlocks.js";
+import { sortTodo } from "./helperFunction/sort.js";
 
 sortTodo();
 if (typeof localStorage.todo === "undefined" || localStorage.todo === "[]") {
-  const message = "У вас пока нет дел.";
-  createEmptyContainer(message);
+  createEmptyContainer(MESSAGE);
 } else {
   const todoList = JSON.parse(localStorage.todo);
   for (const key in todoList) {

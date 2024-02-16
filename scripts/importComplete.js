@@ -1,12 +1,10 @@
-import createLoadManager from "./helperFunction/loadBlocks.js";
-
-const loadManager = createLoadManager();
-
-window.createContainer = loadManager.createContainer;
-window.createEmptyContainer = loadManager.createEmptyContainer;
+import {
+  createContainer,
+  createEmptyContainer,
+} from "./helperFunction/loadBlocks.js";
 
 if (typeof localStorage.completed === "undefined") {
-  const message = "У вас пока нет дел.";
+  const message = "Вы пока не завершили ни одного дела.";
   createEmptyContainer(message);
 } else {
   const completedList = JSON.parse(localStorage.completed);
