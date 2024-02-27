@@ -1,4 +1,4 @@
-import { checkDate, checkDetail, checkTitle } from "./checkInputs.js";
+import { checkDate, checkDetail, checkTitle } from './checkInputs.js';
 
 export function addToStorage() {
   let newId = 0;
@@ -6,9 +6,9 @@ export function addToStorage() {
   const isTitle = checkTitle();
   const isDetail = checkDetail();
   if (isDate && isTitle && isDetail) {
-    const items = JSON.parse(localStorage.getItem("todo"));
+    const items = JSON.parse(localStorage.getItem('todo'));
     if (!!items && items.length !== 0) {
-      const idArr = items.map((element) => element.id);
+      const idArr = items.map(element => element.id);
       newId = Math.max(...idArr) + 1;
     }
 
@@ -22,6 +22,6 @@ export function addToStorage() {
     });
 
     localStorage.todo = JSON.stringify(items);
-    window.location.href = "../index.html";
+    window.location.href = '../pages/index.html';
   }
 }

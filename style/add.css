@@ -41,7 +41,7 @@ header img {
 }
 
 input {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-weight: 400;
   font-size: 18px;
   width: 320px;
@@ -69,13 +69,13 @@ input {
 }
 
 .priority__container label {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 400;
   font-size: 20px;
 }
 
 button {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-weight: 600;
   font-size: 20px;
   color: var(--white);

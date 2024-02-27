@@ -20,18 +20,18 @@ export function sortTodo() {
   const high = [];
   const mid = [];
   const low = [];
-  if (JSON.parse(localStorage.getItem("todo")) !== null) {
-    oldTodo = JSON.parse(localStorage.getItem("todo"));
+  if (JSON.parse(localStorage.getItem('todo')) !== null) {
+    oldTodo = JSON.parse(localStorage.getItem('todo'));
   }
 
-  oldTodo.forEach((element) => {
-    if (element.priority === "high") {
+  oldTodo.forEach(element => {
+    if (element.priority === 'high') {
       high.push(element);
     }
-    if (element.priority === "mid") {
+    if (element.priority === 'mid') {
       mid.push(element);
     }
-    if (element.priority === "low") {
+    if (element.priority === 'low') {
       low.push(element);
     }
   });
