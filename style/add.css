@@ -1,5 +1,14 @@
+@media screen and (max-width: 375px) {
+}
+
 header img {
   margin-left: -60px;
+}
+
+@media screen and (max-width: 576px) {
+  header img {
+    margin-left: -30px;
+  }
 }
 
 .add__main {
@@ -20,6 +29,12 @@ header img {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+}
+
+@media screen and (max-width: 375px) {
+  .add__wrapper > div {
+    gap: 25px;
+  }
 }
 
 .container {
@@ -53,15 +68,32 @@ input {
   padding-bottom: 6px;
 }
 
+@media screen and (max-width: 375px) {
+  input {
+    width: 220px;
+  }
+}
+
 .priority__container {
   width: 320px;
-  display: flex;
   align-items: start;
   gap: 10px;
 }
 
+@media screen and (max-width: 375px) {
+  .priority__container {
+    width: 220px;
+  }
+}
+
 .priority__container p {
   font-size: 20px;
+}
+
+@media screen and (max-width: 375px) {
+  .priority__container p {
+    font-size: 15px;
+  }
 }
 
 .priority__container input {
@@ -88,6 +120,13 @@ button {
   height: 60px;
   cursor: pointer;
   background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 375px) {
+  button {
+    width: 260px;
+    height: 50px;
+  }
 }
 
 button:hover {

@@ -59,6 +59,25 @@ p {
   color: var(--selected-color);
 }
 
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h3,
+  p {
+    font-size: 15px;
+  }
+}
+
 h3 {
   color: var(--subtitle-color);
   width: fit-content;
@@ -68,6 +87,13 @@ img {
   cursor: pointer;
   width: 40px;
   height: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .root {
@@ -86,6 +112,13 @@ header {
   gap: 20px;
 
   padding-left: 100px;
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    gap: 0;
+    padding-left: 40px;
+  }
 }
 
 main {
@@ -127,6 +160,14 @@ main {
   box-shadow: 0px 6px 4px 0px var(--shadow-color);
 }
 
+@media screen and (max-width: 576px) {
+  .todo__container {
+    width: 350px;
+    height: 80px;
+    min-height: 100px;
+  }
+}
+
 .todo__text {
   display: flex;
   flex-direction: column;
@@ -139,13 +180,31 @@ main {
   gap: 25px;
 }
 
+@media screen and (max-width: 576px) {
+  .todo__title {
+    gap: 10px;
+  }
+}
+
 .deadline {
   font-size: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .deadline {
+    font-size: 17px;
+  }
 }
 
 .todo__imgs {
   display: flex;
   gap: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .todo__imgs {
+    gap: 15px;
+  }
 }
 
 .plus {
@@ -164,6 +223,16 @@ main {
   right: 40px;
   bottom: 30px;
 }
+
+@media screen and (max-width: 576px) {
+  .plus {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
 
 .empty-storage {
   color: var(--primary-color);
@@ -190,6 +259,12 @@ footer div {
 
 .completed__main {
   height: 90%;
+}
+
+@media screen and (max-width: 576px) {
+  .completed__main h2 {
+    max-width: fit-content;
+  }
 }
 
 #buttons {

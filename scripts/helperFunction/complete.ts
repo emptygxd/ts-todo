@@ -1,24 +1,42 @@
-export function completeBlock(event) {
-  const id = event.target.id;
+import { Arrays } from '../constants.js';
+
+export function completeBlock(event: Event) {
+  const id = (event.target as HTMLElement).id;
+
   const container = document.getElementById(id);
+  if (container === null) {
+    return;
+  }
+
   const title = container.querySelector('h2');
   const description = container.querySelector('h3');
   const deadline = container.querySelector('p');
+  const priority = container.classList.item(1);
+
+  if (title === null) {
+    return;
+  }
+  if (description === null) {
+    return;
+  }
+  if (deadline === null) {
+    return;
+  }
+  if (priority === null) {
+    return;
+  }
 
   const titleText = title.innerText;
   const descriptionText = description.innerText;
   const deadlineText = deadline.innerText;
 
-  const priority = container.classList.item(1);
-  let oldCompleted = [];
-  let oldTodo = [];
+  const oldCompleted: Arrays = JSON.parse(
+    localStorage.getItem('completed') || ''
+  );
+  const oldTodo: Arrays = JSON.parse(localStorage.getItem('todo') || '');
+
   if (!container.classList.contains('done')) {
     container.classList.toggle('done');
-
-    oldTodo = JSON.parse(localStorage.getItem('todo'));
-    if (JSON.parse(localStorage.getItem('completed')) !== null) {
-      oldCompleted = JSON.parse(localStorage.getItem('completed'));
-    }
 
     container.classList.remove('outcross');
     container.classList.add('cross');
@@ -47,11 +65,6 @@ export function completeBlock(event) {
     localStorage.completed = JSON.stringify(oldCompleted);
   } else {
     container.classList.toggle('done');
-
-    oldCompleted = JSON.parse(localStorage.getItem('completed'));
-    if (JSON.parse(localStorage.getItem('todo')) !== null) {
-      oldTodo = JSON.parse(localStorage.getItem('todo'));
-    }
 
     container.classList.remove('cross');
     container.classList.add('outcross');

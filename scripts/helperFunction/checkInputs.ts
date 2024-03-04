@@ -8,39 +8,40 @@ import {
 } from '../constants.js';
 
 export function checkDate() {
+  const deadlineValue = DEADLINE_INPUT.value;
   const currDate = new Date();
 
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 50);
 
   if (
-    !DEADLINE_INPUT.value ||
-    new Date(DEADLINE_INPUT.value) < currDate ||
-    new Date(DEADLINE_INPUT.value) > maxDate
+    !deadlineValue ||
+    new Date(deadlineValue) < currDate ||
+    new Date(deadlineValue) > maxDate
   ) {
-    DEADLINE_ERROR.classList.remove('hidden');
+    DEADLINE_ERROR?.classList.remove('hidden');
     return false;
   }
-  DEADLINE_ERROR.classList.add('hidden');
+  DEADLINE_ERROR?.classList.add('hidden');
   return true;
 }
 
 export function checkTitle() {
   if (!TITLE_INPUT.value) {
-    TITLE_ERROR.classList.remove('hidden');
+    TITLE_ERROR?.classList.remove('hidden');
     return false;
   } else {
-    TITLE_ERROR.classList.add('hidden');
+    TITLE_ERROR?.classList.add('hidden');
     return true;
   }
 }
 
 export function checkDetail() {
   if (!DETAIL_INPUT.value) {
-    DETAIL_ERROR.classList.remove('hidden');
+    DETAIL_ERROR?.classList.remove('hidden');
     return false;
   } else {
-    DETAIL_ERROR.classList.add('hidden');
+    DETAIL_ERROR?.classList.add('hidden');
     return true;
   }
 }

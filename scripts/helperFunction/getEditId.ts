@@ -1,16 +1,23 @@
-import { TITLE_INPUT, DETAIL_INPUT, DEADLINE_INPUT } from '../constants.js';
+import {
+  TITLE_INPUT,
+  DETAIL_INPUT,
+  DEADLINE_INPUT,
+  Obj,
+  Arrays,
+} from '../constants.js';
 
 export function getEditId() {
   const id = window.location.search.slice(1);
-  const data = JSON.parse(localStorage.getItem('todo'));
+  const data: Arrays = JSON.parse(localStorage.getItem('todo') || '');
 
-  data.forEach((element, index) => {
+  data.forEach((element: Obj, index: number) => {
     if (element.id == id) {
-      localStorage.setItem('editId', index);
+      localStorage.setItem('editId', String(index));
     }
   });
+  const editId: number = JSON.parse(localStorage.getItem('editId') || '');
 
-  const editElement = data[localStorage.getItem('editId')];
+  const editElement = data[editId];
   TITLE_INPUT.value = editElement.title;
   DETAIL_INPUT.value = editElement.description;
 

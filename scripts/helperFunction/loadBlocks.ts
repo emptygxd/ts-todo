@@ -1,15 +1,15 @@
-import { INDEX_PAGE, INDEX } from '../constants.js';
+import { INDEX_PAGE, INDEX, Obj } from '../constants.js';
 import { deleteBlock } from './delete.js';
 import { completeBlock } from './complete.js';
 
-export function createEmptyContainer(message) {
+export function createEmptyContainer(message: string): void {
   const p = document.createElement('p');
   p.classList.add('empty-storage');
   p.innerText = message;
-  INDEX_PAGE.appendChild(p);
+  INDEX_PAGE?.appendChild(p);
 }
 
-export function createContainer(todoObject, page) {
+export function createContainer(todoObject: Obj, page: string) {
   const todo__container = document.createElement('div');
 
   const todo__text = document.createElement('div');
@@ -38,7 +38,7 @@ export function createContainer(todoObject, page) {
   todo__container.setAttribute('id', todoObject.id);
   todo__container.appendChild(todo__text);
 
-  INDEX_PAGE.appendChild(todo__container);
+  INDEX_PAGE?.appendChild(todo__container);
 
   if (page === INDEX) {
     const todo__imgs = document.createElement('div');
@@ -63,6 +63,7 @@ export function createContainer(todoObject, page) {
     imgTrash.src = '../assets/trash.png';
     imgTrash.alt = 'trash';
     imgTrash.setAttribute('id', todoObject.id);
+
     imgTrash.onclick = deleteBlock;
 
     imgDone.src = '../assets/done.png';

@@ -1,21 +1,25 @@
-import { INDEX_PAGE, MESSAGE } from '../constants.js';
+import { INDEX_PAGE, MESSAGE, Obj, Arrays } from '../constants.js';
 import { createEmptyContainer } from './loadBlocks.js';
 
-export function deleteBlock(event) {
-  const id = event.target.id;
+export function deleteBlock(event: MouseEvent) {
+  const id = (event.target as HTMLElement).id;
+
   const container = document.getElementById(id);
+  if (container === null) {
+    return;
+  }
 
   if (
     confirm(
       'Вы уверены, что хотите удалить "' +
-        container.querySelector('h2').innerText +
+        container?.querySelector('h2')?.innerText +
         '"?'
     )
   ) {
-    INDEX_PAGE.removeChild(container);
-    const oldTodo = JSON.parse(localStorage.getItem('todo'));
+    INDEX_PAGE?.removeChild(container);
+    const oldTodo: Arrays = JSON.parse(localStorage.getItem('todo') || '');
 
-    oldTodo.forEach((element, index) => {
+    oldTodo.forEach((element: Obj, index: number) => {
       if (element.id == id) {
         oldTodo.splice(index, 1);
       }
