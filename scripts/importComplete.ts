@@ -1,7 +1,7 @@
 import {
   createContainer,
   createEmptyContainer,
-} from './helperFunction/loadBlocks.js';
+} from './helperFunction/helperIndex.js';
 
 if (
   typeof localStorage.completed === 'undefined' ||

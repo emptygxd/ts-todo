@@ -1,6 +1,5 @@
-import { INDEX_PAGE, INDEX, Obj } from '../constants.js';
-import { deleteBlock } from './delete.js';
-import { completeBlock } from './complete.js';
+import { INDEX_PAGE, INDEX, ObjT } from '../constants.js';
+import { deleteBlock, completeBlock } from './helperIndex.js';
 
 export function createEmptyContainer(message: string): void {
   const p = document.createElement('p');
@@ -9,7 +8,7 @@ export function createEmptyContainer(message: string): void {
   INDEX_PAGE?.appendChild(p);
 }
 
-export function createContainer(todoObject: Obj, page: string) {
+export function createContainer(todoObject: ObjT, page: string) {
   const todo__container = document.createElement('div');
 
   const todo__text = document.createElement('div');
@@ -35,7 +34,7 @@ export function createContainer(todoObject: Obj, page: string) {
   todo__text.appendChild(todo__subtitle);
 
   todo__container.classList.add('todo__container');
-  todo__container.setAttribute('id', todoObject.id);
+  todo__container.setAttribute('id', String(todoObject.id));
   todo__container.appendChild(todo__text);
 
   INDEX_PAGE?.appendChild(todo__container);
@@ -57,18 +56,18 @@ export function createContainer(todoObject: Obj, page: string) {
     aEdit.href = '../pages/edit.html?' + todoObject.id;
     imgEdit.src = '../assets/edit.png';
     imgEdit.alt = 'edit';
-    imgEdit.setAttribute('id', todoObject.id);
+    imgEdit.setAttribute('id', String(todoObject.id));
     aEdit.appendChild(imgEdit);
 
     imgTrash.src = '../assets/trash.png';
     imgTrash.alt = 'trash';
-    imgTrash.setAttribute('id', todoObject.id);
+    imgTrash.setAttribute('id', String(todoObject.id));
 
     imgTrash.onclick = deleteBlock;
 
     imgDone.src = '../assets/done.png';
     imgDone.alt = 'done';
-    imgDone.setAttribute('id', todoObject.id);
+    imgDone.setAttribute('id', String(todoObject.id));
     imgDone.onclick = completeBlock;
 
     todo__imgs.classList.add('todo__imgs');

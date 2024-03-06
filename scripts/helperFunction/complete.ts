@@ -1,9 +1,9 @@
-import { Arrays } from '../constants.js';
+import { ArraysT } from '../constants.js';
 
 export function completeBlock(event: Event) {
-  const id = (event.target as HTMLElement).id;
+  const id = Number((event.target as HTMLElement).id);
 
-  const container = document.getElementById(id);
+  const container = document.getElementById(String(id));
   if (container === null) {
     return;
   }
@@ -13,16 +13,12 @@ export function completeBlock(event: Event) {
   const deadline = container.querySelector('p');
   const priority = container.classList.item(1);
 
-  if (title === null) {
-    return;
-  }
-  if (description === null) {
-    return;
-  }
-  if (deadline === null) {
-    return;
-  }
-  if (priority === null) {
+  if (
+    title === null ||
+    description === null ||
+    deadline === null ||
+    priority === null
+  ) {
     return;
   }
 
@@ -30,10 +26,10 @@ export function completeBlock(event: Event) {
   const descriptionText = description.innerText;
   const deadlineText = deadline.innerText;
 
-  const oldCompleted: Arrays = JSON.parse(
+  const oldCompleted: ArraysT = JSON.parse(
     localStorage.getItem('completed') || ''
   );
-  const oldTodo: Arrays = JSON.parse(localStorage.getItem('todo') || '');
+  const oldTodo: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
 
   if (!container.classList.contains('done')) {
     container.classList.toggle('done');
@@ -50,13 +46,7 @@ export function completeBlock(event: Event) {
     });
 
     oldTodo.forEach((element, index) => {
-      if (
-        element.id === id &&
-        element.title === titleText &&
-        element.description === descriptionText &&
-        element.deadline === deadlineText &&
-        element.priority === priority
-      ) {
+      if (element.id === id) {
         oldTodo.splice(index, 1);
       }
     });
@@ -78,13 +68,7 @@ export function completeBlock(event: Event) {
     });
 
     oldCompleted.forEach((element, index) => {
-      if (
-        element.id === id &&
-        element.title === titleText &&
-        element.description === descriptionText &&
-        element.deadline === deadlineText &&
-        element.priority === priority
-      ) {
+      if (element.id === id) {
         oldCompleted.splice(index, 1);
       }
     });

@@ -2,8 +2,8 @@ import { MESSAGE, INDEX } from './constants.js';
 import {
   createContainer,
   createEmptyContainer,
-} from './helperFunction/loadBlocks.js';
-import { sortTodo } from './helperFunction/sort.js';
+  sortTodo,
+} from './helperFunction/helperIndex.js';
 
 if (!localStorage.completed) {
   localStorage.completed = '[]';

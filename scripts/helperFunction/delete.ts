@@ -1,10 +1,10 @@
-import { INDEX_PAGE, MESSAGE, Obj, Arrays } from '../constants.js';
-import { createEmptyContainer } from './loadBlocks.js';
+import { INDEX_PAGE, MESSAGE, ObjT, ArraysT } from '../constants.js';
+import { createEmptyContainer } from './helperIndex.js';
 
 export function deleteBlock(event: MouseEvent) {
-  const id = (event.target as HTMLElement).id;
+  const id = Number((event.target as HTMLElement).id);
 
-  const container = document.getElementById(id);
+  const container = document.getElementById(String(id));
   if (container === null) {
     return;
   }
@@ -17,9 +17,9 @@ export function deleteBlock(event: MouseEvent) {
     )
   ) {
     INDEX_PAGE?.removeChild(container);
-    const oldTodo: Arrays = JSON.parse(localStorage.getItem('todo') || '');
+    const oldTodo: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
 
-    oldTodo.forEach((element: Obj, index: number) => {
+    oldTodo.forEach((element: ObjT, index: number) => {
       if (element.id == id) {
         oldTodo.splice(index, 1);
       }

@@ -1,4 +1,4 @@
-import { addToStorage } from './helperFunction/addToStorage.js';
+import { addToStorage } from './helperFunction/helperIndex.js';
 
 const addButton = document.getElementById('add');
 

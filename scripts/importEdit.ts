@@ -1,5 +1,4 @@
-import { getEditId } from './helperFunction/getEditId.js';
-import { editStorage } from './helperFunction/editStorage.js';
+import { getEditId, editStorage } from './helperFunction/helperIndex.js';
 
 const canceButton = document.querySelector('.cancel');
 const updateButton = document.querySelector('.update');

@@ -2,15 +2,15 @@ import {
   TITLE_INPUT,
   DETAIL_INPUT,
   DEADLINE_INPUT,
-  Obj,
-  Arrays,
+  ObjT,
+  ArraysT,
 } from '../constants.js';
 
 export function getEditId() {
-  const id = window.location.search.slice(1);
-  const data: Arrays = JSON.parse(localStorage.getItem('todo') || '');
+  const id = Number(window.location.search.slice(1));
+  const data: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
 
-  data.forEach((element: Obj, index: number) => {
+  data.forEach((element: ObjT, index: number) => {
     if (element.id == id) {
       localStorage.setItem('editId', String(index));
     }

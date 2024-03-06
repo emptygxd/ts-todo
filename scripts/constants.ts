@@ -10,5 +10,11 @@ export const INDEX_PAGE = document.getElementById('index__wrapper');
 export const MESSAGE: string = 'У вас пока нет дел.';
 export const INDEX: string = 'index';
 
-export type Obj = Record<string, string>;
-export type Arrays = Array<Obj>;
+export type ObjT = {
+  title: string;
+  description: string;
+  deadline: string;
+  priority: string;
+  id: number;
+};
+export type ArraysT = Array<ObjT>;

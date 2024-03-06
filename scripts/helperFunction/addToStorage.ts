@@ -1,10 +1,9 @@
-import { checkDate, checkDetail, checkTitle } from './checkInputs.js';
+import { checkDate, checkDetail, checkTitle } from './helperIndex.js';
 import {
   DEADLINE_INPUT,
   TITLE_INPUT,
   DETAIL_INPUT,
-  Obj,
-  Arrays,
+  ArraysT,
 } from '../constants.js';
 
 export function addToStorage() {
@@ -12,17 +11,14 @@ export function addToStorage() {
   const title = TITLE_INPUT.value;
   const detail = DETAIL_INPUT.value;
 
-  let newId = 0;
+  const date = new Date();
+  const id: number = date.getTime();
   const isDate = checkDate();
   const isTitle = checkTitle();
   const isDetail = checkDetail();
 
   if (isDate && isTitle && isDetail) {
-    const items: Arrays = JSON.parse(localStorage.getItem('todo') || '');
-    if (!!items && items.length !== 0) {
-      const idArr: string[] = items.map((element: Obj) => element.id);
-      newId = Math.max(Number(...idArr)) + 1;
-    }
+    const items: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
 
     const priorityInput = <HTMLInputElement>(
       document.querySelector('input[name="priority"]:checked')
@@ -34,7 +30,7 @@ export function addToStorage() {
       description: detail,
       deadline: formatDeadline,
       priority: priorityInput.value,
-      id: String(newId),
+      id: id,
     });
 
     localStorage.todo = JSON.stringify(items);
