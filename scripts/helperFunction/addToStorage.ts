@@ -1,10 +1,6 @@
 import { checkDate, checkDetail, checkTitle } from './helperIndex.js';
-import {
-  DEADLINE_INPUT,
-  TITLE_INPUT,
-  DETAIL_INPUT,
-  ArraysT,
-} from '../constants.js';
+import { DEADLINE_INPUT, TITLE_INPUT, DETAIL_INPUT } from '../constants.js';
+import { TodoType } from '../types.js';
 
 export function addToStorage() {
   const deadline = DEADLINE_INPUT.value;
@@ -18,7 +14,7 @@ export function addToStorage() {
   const isDetail = checkDetail();
 
   if (isDate && isTitle && isDetail) {
-    const items: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
+    const items: TodoType[] = JSON.parse(localStorage.getItem('todo') || '');
 
     const priorityInput = <HTMLInputElement>(
       document.querySelector('input[name="priority"]:checked')

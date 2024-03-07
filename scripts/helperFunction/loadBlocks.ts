@@ -1,5 +1,6 @@
-import { INDEX_PAGE, INDEX, ObjT } from '../constants.js';
+import { INDEX_PAGE, INDEX } from '../constants.js';
 import { deleteBlock, completeBlock } from './helperIndex.js';
+import { TodoType } from '../types.js';
 
 export function createEmptyContainer(message: string): void {
   const p = document.createElement('p');
@@ -8,7 +9,7 @@ export function createEmptyContainer(message: string): void {
   INDEX_PAGE?.appendChild(p);
 }
 
-export function createContainer(todoObject: ObjT, page: string) {
+export function createContainer(todoObject: TodoType, page: string) {
   const todo__container = document.createElement('div');
 
   const todo__text = document.createElement('div');

@@ -1,16 +1,11 @@
-import {
-  TITLE_INPUT,
-  DETAIL_INPUT,
-  DEADLINE_INPUT,
-  ObjT,
-  ArraysT,
-} from '../constants.js';
+import { TITLE_INPUT, DETAIL_INPUT, DEADLINE_INPUT } from '../constants.js';
+import { TodoType } from '../types.js';
 
 export function getEditId() {
   const id = Number(window.location.search.slice(1));
-  const data: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
+  const data: TodoType[] = JSON.parse(localStorage.getItem('todo') || '');
 
-  data.forEach((element: ObjT, index: number) => {
+  data.forEach((element: TodoType, index: number) => {
     if (element.id == id) {
       localStorage.setItem('editId', String(index));
     }

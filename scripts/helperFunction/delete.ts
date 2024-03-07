@@ -1,4 +1,5 @@
-import { INDEX_PAGE, MESSAGE, ObjT, ArraysT } from '../constants.js';
+import { INDEX_PAGE, MESSAGE } from '../constants.js';
+import { TodoType } from '../types.js';
 import { createEmptyContainer } from './helperIndex.js';
 
 export function deleteBlock(event: MouseEvent) {
@@ -17,9 +18,9 @@ export function deleteBlock(event: MouseEvent) {
     )
   ) {
     INDEX_PAGE?.removeChild(container);
-    const oldTodo: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
+    const oldTodo: TodoType[] = JSON.parse(localStorage.getItem('todo') || '');
 
-    oldTodo.forEach((element: ObjT, index: number) => {
+    oldTodo.forEach((element: TodoType, index: number) => {
       if (element.id == id) {
         oldTodo.splice(index, 1);
       }

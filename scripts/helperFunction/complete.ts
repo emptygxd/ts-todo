@@ -1,4 +1,4 @@
-import { ArraysT } from '../constants.js';
+import { TodoType } from '../types.js';
 
 export function completeBlock(event: Event) {
   const id = Number((event.target as HTMLElement).id);
@@ -26,10 +26,10 @@ export function completeBlock(event: Event) {
   const descriptionText = description.innerText;
   const deadlineText = deadline.innerText;
 
-  const oldCompleted: ArraysT = JSON.parse(
+  const oldCompleted: TodoType[] = JSON.parse(
     localStorage.getItem('completed') || ''
   );
-  const oldTodo: ArraysT = JSON.parse(localStorage.getItem('todo') || '');
+  const oldTodo: TodoType[] = JSON.parse(localStorage.getItem('todo') || '');
 
   if (!container.classList.contains('done')) {
     container.classList.toggle('done');

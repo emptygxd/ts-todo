@@ -1,18 +1,14 @@
 import { checkDate, checkDetail, checkTitle } from './helperIndex.js';
 
-import {
-  DEADLINE_INPUT,
-  TITLE_INPUT,
-  DETAIL_INPUT,
-  ArraysT,
-} from '../constants.js';
+import { DEADLINE_INPUT, TITLE_INPUT, DETAIL_INPUT } from '../constants.js';
+import { TodoType } from '../types.js';
 
 export function editStorage() {
   const deadline = DEADLINE_INPUT.value;
   const title = TITLE_INPUT.value;
   const detail = DETAIL_INPUT.value;
 
-  let oldObjects: ArraysT = [];
+  let oldObjects: TodoType[] = [];
   if (checkTitle() && checkDetail() && checkDate()) {
     oldObjects = JSON.parse(localStorage.getItem('todo') || '');
 
