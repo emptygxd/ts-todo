@@ -14,7 +14,7 @@ export function addToStorage() {
   const isDetail = checkDetail();
 
   if (isDate && isTitle && isDetail) {
-    const items: TodoType[] = JSON.parse(localStorage.getItem('todo') || '');
+    const items: TodoType[] = JSON.parse(localStorage.getItem('todo') || '[]');
 
     const priorityInput = <HTMLInputElement>(
       document.querySelector('input[name="priority"]:checked')
@@ -30,6 +30,6 @@ export function addToStorage() {
     });
 
     localStorage.todo = JSON.stringify(items);
-    window.location.href = '../../pages/index.html';
+    window.location.href = '../../index.html';
   }
 }
