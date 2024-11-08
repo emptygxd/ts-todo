@@ -38,7 +38,7 @@ export function createContainer(todoObject, page) {
         pDeadline.innerText = todoObject.deadline;
         pDeadline.title = todoObject.deadline;
         pDeadline.classList.add('deadline');
-        aEdit.href = '../pages/edit.html?' + todoObject.id;
+        aEdit.href = './pages/edit.html?' + todoObject.id;
         imgEdit.src = './assets/edit.png';
         imgEdit.alt = 'edit';
         imgEdit.setAttribute('id', String(todoObject.id));
