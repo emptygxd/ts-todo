@@ -55,18 +55,18 @@ export function createContainer(todoObject: TodoType, page: string) {
     pDeadline.classList.add('deadline');
 
     aEdit.href = '../pages/edit.html?' + todoObject.id;
-    imgEdit.src = '../assets/edit.png';
+    imgEdit.src = './assets/edit.png';
     imgEdit.alt = 'edit';
     imgEdit.setAttribute('id', String(todoObject.id));
     aEdit.appendChild(imgEdit);
 
-    imgTrash.src = '../assets/trash.png';
+    imgTrash.src = './assets/trash.png';
     imgTrash.alt = 'trash';
     imgTrash.setAttribute('id', String(todoObject.id));
 
     imgTrash.onclick = deleteBlock;
 
-    imgDone.src = '../assets/done.png';
+    imgDone.src = './assets/done.png';
     imgDone.alt = 'done';
     imgDone.setAttribute('id', String(todoObject.id));
     imgDone.onclick = completeBlock;
