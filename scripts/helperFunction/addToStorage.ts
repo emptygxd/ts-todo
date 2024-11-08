@@ -30,6 +30,6 @@ export function addToStorage() {
     });
 
     localStorage.todo = JSON.stringify(items);
-    window.location.href = '../../index.html';
+    window.location.href = '../index.html';
   }
 }

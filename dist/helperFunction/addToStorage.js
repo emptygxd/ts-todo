@@ -21,6 +21,6 @@ export function addToStorage() {
             id: id,
         });
         localStorage.todo = JSON.stringify(items);
-        window.location.href = '../../index.html';
+        window.location.href = '../index.html';
     }
 }
