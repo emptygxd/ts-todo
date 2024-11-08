@@ -4,7 +4,7 @@ const canceButton = document.querySelector('.cancel');
 const updateButton = document.querySelector('.update');
 
 canceButton?.addEventListener('click', () => {
-  window.location.href = './index.html';
+  window.location.href = '../index.html';
 });
 
 getEditId();
