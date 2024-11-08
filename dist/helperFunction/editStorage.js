@@ -19,6 +19,6 @@ export function editStorage() {
         });
         oldObjects.splice(editId, 1);
         localStorage.todo = JSON.stringify(oldObjects);
-        window.location.href = '../../index.html';
+        window.location.href = '../index.html';
     }
 }
